@@ -1,4 +1,4 @@
-# Wellthy dbt and SQL Style Guide
+# Analytics Engineer Prompt Style Guide
 
 ## Overview
 In an effort to streamline development and maintenance of our dbt models, we want to have a standard approach to writing our SQL/dbt code so there is consistency across our models, regardless of who develops them.

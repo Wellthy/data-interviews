@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: full_project_history
+    description: Combines projects and project_history models.
+                 A project history record gets created on every change to a project, regardless of attribute changed.
+
+  - name: full_task_history
+    description: Combines tasks and task_history models.
+                 A task history record gets created on every change to a task, regardless of attribute changed.

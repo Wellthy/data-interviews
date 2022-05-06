@@ -1,7 +1,11 @@
 # Analytics Engineer Prompt
 
 ## Background
-At Wellthy, we use dbt to build and maintain our data transformations. dbt is a open source, command line tool that lets data teams quickly and collaboratively deploy analytics code following software engineering best practices using SQL. For more information about dbt you can reference the documentation [here](https://docs.getdbt.com/docs/introduction) or feel free to test it out by following their [online tutorial](https://courses.getdbt.com/collections), but please note this is not required for this interview. for the purpose of this challenge KELLY FINISH THIS HERE 
+At Wellthy, we use dbt to build and maintain our data transformations. dbt is a open source, command line tool that lets data teams quickly and collaboratively deploy analytics code following software engineering best practices using SQL. For more information about dbt you can reference the documentation [here](https://docs.getdbt.com/docs/introduction) or feel free to test it out by following their [online tutorial](https://courses.getdbt.com/collections), but please note this is not required for this interview. 
+
+For the purpose of this challenge, think of dbt as a tool that enables you to build and test tables (data models) using `SELECT` statements. Each data model that is created in a dbt project is stored in a .sql file. Since data models are often dependent on each other, dbt creates a directed acyclic graph (DAG) that allows you to see these dependencies. This is done by using jinja like so `ref('some_model_name') }}` to reference tables in the `FROM` statement.
+
+Data models can be configured and data tests and documentation can be added using YAML files. Click [here](https://docs.getdbt.com/docs/building-a-dbt-project/tests) for more information about dbt tests or [here](https://docs.getdbt.com/docs/building-a-dbt-project/documentation) for more information about documentation.
 
 ## Preparing for your Technical Interview
 Prior to your technical interview, please review the files in the `base`, `intermediate`, and `prod` subdirectories, as well as the [Analytics Engineer Prompt Style Guide](Style_Guide.md). Make note of any questions you might have about the sample data model - you will have an opportunity to ask them during the interview.

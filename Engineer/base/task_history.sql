@@ -10,7 +10,3 @@ SELECT history_id AS task_history_id
      , history_user_id AS modified_by
      , title AS task_title
   FROM {{ source('wellthy', 'historical_task') }}
--- If the _sdc_deleted_at column exists, we want to exclude it
-{%- if if_column_exists('source', 'historical_task', '_sdc_deleted_at') %}
- WHERE _sdc_deleted_at IS NULL
-{%- endif -%}

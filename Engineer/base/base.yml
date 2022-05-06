@@ -19,10 +19,15 @@ sources:
               - not_null
               - unique
           - name: type
+            description: The type of a project.
           - name: status
+            description: The status of a project.
           - name: first_active
+            description: The timestamp when a project first became active.
           - name: created
+            description: The timestamp when a project was created.
           - name: modified
+            description: The timestamp of the latest modification to a project.
           - name: creator_id
             description : The ID of a project's creator.
             tests:
@@ -40,11 +45,15 @@ sources:
           - name: id
             description: The project ID.
           - name: type
+            description: The type of a project at the time of modification.
           - name: status
+            description: The status of a project at the time of modification.
           - name: first_active
+            description: The timestamp when a project first became active.
           - name: created
+            description: The timestamp when a project was created.
           - name: history_date
-            description: The date a project was modified.
+            description: The timestamp a project was modified.
           - name: history_user_id
             description: The ID of the person that made a change to the project.
             tests:
@@ -59,10 +68,15 @@ sources:
               - not_null
               - unique
           - name: created
+            description: The timestamp when a task was created.
           - name: modified
+            description: The timestamp when a task was modified.
           - name: status
+            description: The status of a task.
           - name: title
+            description: The title of a task.
           - name: due
+            description: The timestamp when a task is due.
           - name: project_id
             description: The project ID associated with a task.
             tests: 
@@ -82,12 +96,17 @@ sources:
               - not_null
               - unique
           - name: id
+            description: The task ID.
           - name: created
+            description: The timestamp when a task was created.
           - name: status
+            description: The status of a task at the time of modification.
           - name: title
+            description: The title of a task at the time of modification.
           - name: due
+            description: The timestamp when a task is due at the time of modification.
           - name: history_date
-            description: The date a task was modified.
+            description: The timestamp a task was modified.
           - name: history_user_id
             description: The ID of the person that made a change to the task.
             tests:

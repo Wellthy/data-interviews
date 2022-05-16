@@ -1,0 +1,113 @@
+version: 2
+
+sources:
+
+  - name: wellthy
+    database: source_database
+    schema: source_schema
+    description: This is data from the Wellthy production database, extracted via Stitch.
+    freshness: # default freshness
+      warn_after: {count: 24, period: hour}
+    loaded_at_field: _SDC_RECEIVED_AT
+    tables:
+      - name: project
+        description: A Table that contains all current project related details.
+        columns:
+          - name: id
+            description: Primary Key of the activity project table.
+            tests:
+              - not_null
+              - unique
+          - name: type
+            description: The type of a project.
+          - name: status
+            description: The status of a project.
+          - name: first_active
+            description: The timestamp when a project first became active.
+          - name: created
+            description: The timestamp when a project was created.
+          - name: modified
+            description: The timestamp of the latest modification to a project.
+          - name: creator_id
+            description : The ID of a project's creator.
+            tests:
+              - not_null:
+                  severity: warn
+
+      - name: historical_project
+        description: History table for projects
+        columns:
+          - name: history_id
+            description: Primary key of the history project table.
+            tests:
+              - not_null
+              - unique
+          - name: id
+            description: The project ID.
+          - name: type
+            description: The type of a project at the time of modification.
+          - name: status
+            description: The status of a project at the time of modification.
+          - name: first_active
+            description: The timestamp when a project first became active.
+          - name: created
+            description: The timestamp when a project was created.
+          - name: history_date
+            description: The timestamp a project was modified.
+          - name: history_user_id
+            description: The ID of the person that made a change to the project.
+            tests:
+             - not_null
+
+      - name: task 
+        description: A table that contains a project's task information.
+        columns:
+          - name: id
+            description: The id column is the primary key of the task table.
+            tests: 
+              - not_null
+              - unique
+          - name: created
+            description: The timestamp when a task was created.
+          - name: modified
+            description: The timestamp when a task was modified.
+          - name: status
+            description: The status of a task.
+          - name: title
+            description: The title of a task.
+          - name: due
+            description: The timestamp when a task is due.
+          - name: project_id
+            description: The project ID associated with a task.
+            tests: 
+              - not_null:
+                  where: '_sdc_deleted_at is null'
+                  severity: warn
+              - relationships:
+                  to: source ('wellthy' , 'project')
+                  field: id
+
+      - name: historical_task
+        description: A history table for tasks
+        columns:
+          - name: history_id
+            description: Primary key of the history task table.
+            tests:
+              - not_null
+              - unique
+          - name: id
+            description: The task ID.
+          - name: created
+            description: The timestamp when a task was created.
+          - name: status
+            description: The status of a task at the time of modification.
+          - name: title
+            description: The title of a task at the time of modification.
+          - name: due
+            description: The timestamp when a task is due at the time of modification.
+          - name: history_date
+            description: The timestamp a task was modified.
+          - name: history_user_id
+            description: The ID of the person that made a change to the task.
+            tests:
+             - not_null

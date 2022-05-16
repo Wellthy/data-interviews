@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: current_project_summary
+    description: Summarizes task information for each project.

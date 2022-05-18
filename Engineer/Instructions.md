@@ -20,10 +20,10 @@ Is there a particular project type or task type that takes longer than others?
 ## Challenge
 An analytics engineer on the team has started modeling out this data to allow the analyst to answer these questions more easily. The analytics engineer has submitted a pull request (PR) for you to review. 
 
-Prior to your technical interview, please review the files in the `base`, `intermediate`, and `prod` subdirectories as well as the open PR. Make note of any questions you might have about the sample data model - you will have an opportunity to ask them during the interview.
+Prior to your technical interview, please review the files in the `base`, `intermediate`, and `prod` subdirectories as well as the open Pull Request. Make note of any questions you might have about the sample data model - you will have an opportunity to ask them during the interview.
 
 ## The Technical Interview
-During your technical interview, we will discuss your review of the PR in a collaborative session. You will not be asked to do any coding yourself, but please be prepared to share your screen and discuss what changes, suggestions, or questions you would include in your PR review. Please note: You do not need to submit anything ahead of the interview or prepare a presentation of any kind.
+During your technical interview, we will discuss your review of the Pull Request in a collaborative session. You will not be asked to do any coding yourself, but please be prepared to share your screen and discuss what changes, suggestions, or questions you would include in your Pull Request review. Please note: You do not need to submit anything ahead of the interview or prepare a presentation of any kind.
 
 ## dbt Model structure
 Our dbt structure is separated across multiple databases and schemas and transformations are performed in different "layers" to reduce the repetition of logic across multiple models.

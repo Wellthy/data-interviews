@@ -6,7 +6,7 @@ SELECT history.project_id
      , history.created_date
      , history.first_active_date
      , history.modified_date
-     , MIN(CASE WHEN status.description = 'Paused'
+     , MIN(CASE WHEN history.project_status = 'Paused'
                 THEN history.modified_date
                 ELSE NULL
             END) OVER (PARTITION BY history.project_id) AS first_paused_date

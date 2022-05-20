@@ -2,4 +2,4 @@ version: 2
 
 models:
   - name: current_project_summary
-    description: Summarizes task information for each project.
+    description: Lists details of a project and pre-aggregates the number of tasks associate with the current project record.

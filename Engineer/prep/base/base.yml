@@ -36,6 +36,7 @@ sources:
 
       - name: historical_project
         description: Contains a record for each change made to a project.
+                     This table is created through change data capture, with the history_date column indicating the timestamp of change.
         columns:
           - name: history_id
             description: Primary key of the history project table.
@@ -89,6 +90,7 @@ sources:
 
       - name: historical_task
         description: Contains a record for each change made to a task.
+                     This table is created through change data capture, with the history_date column indicating the timestamp of change.
         columns:
           - name: history_id
             description: Primary key of the history task table.

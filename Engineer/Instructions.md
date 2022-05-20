@@ -17,11 +17,11 @@ Wellthy’s main source of revenue is through employer benefit programs. Compani
 A data analyst comes to the analytics engineers and says that the Care Team is struggling to meet capacity. One manager hypothesizes that this is due to an increase in the number of care projects and they need to hire more people. However, another manager thinks that there is an efficiency problem and certain tasks or projects are causing bottlenecks in the process. The data analyst needs to be able to analyze the data and deliver insights to the Care Team so they can make a decision on how to handle the capacity problem. 
 
 ## Here are some of the business questions that analyst would like to be able to answer:
-How many projects are starting each week?
-How many `in progress` tasks are in each project?
-How long is it taking to complete tasks and projects?
-Is there a particular phase of a task that takes longer than others?
-Is there a particular project type or task type that takes longer than others?
+* How many projects are starting each week?
+* How many `in progress` tasks are in each project?
+* How long is it taking to complete tasks and projects?
+* Is there a particular phase of a task that takes longer than others?
+* Is there a particular project type or task type that takes longer than others?
 
 ## Challenge
 An analytics engineer on the team has started modeling out this data to allow the analyst to answer these questions more easily. The analytics engineer has submitted a pull request (PR) for you to review. 

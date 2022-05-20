@@ -18,6 +18,7 @@ SELECT full_project_history.project_id
    AND full_task_history.history_sequence = 1
  GROUP BY full_project_history.project_id
         , full_project_history.creator_id
+        , full_project_history.name
         , full_project_history.project_type
         , full_project_history.project_status
         , full_project_history.previous_project_status

@@ -11,7 +11,3 @@ SELECT history_id AS project_history_id
      , DATE(history_date) AS modified_date
      , history_user_id AS modified_by
   FROM {{ source('wellthy', 'historical_project') }}
--- If the _sdc_deleted_at column exists, we want to exclude it
-{%- if if_column_exists('source', 'historical_project', '_sdc_deleted_at') %}
- WHERE _sdc_deleted_at IS NULL
-{%- endif -%}

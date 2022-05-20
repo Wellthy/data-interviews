@@ -7,6 +7,12 @@ For the purpose of this challenge, think of dbt as a tool that enables you to bu
 
 Data models can be configured and data tests and documentation can be added using YAML files. Click [here](https://docs.getdbt.com/docs/building-a-dbt-project/tests) for more information about dbt tests or [here](https://docs.getdbt.com/docs/building-a-dbt-project/documentation) for more information about documentation.
 
+At Wellthy, we support families in caring for their loved ones, whether it's for their spouse,  parents, children, or even the next-door neighbor who's just like family. We do this by seamlessly integrating technology and personalized care support to help caregivers tackle the logistical and administrative tasks of caring for the ones they love including themselves.
+
+This process starts with a caregiver creating a care project on the Wellthy platform. The caregiver can then create or choose tasks based on their needs, and their care project will be assigned to a care coordinator who will complete their tasks. If you are interested in learning more about Wellthy’s service you can read more at [here](https://wellthy.com/).
+
+Wellthy’s main source of revenue is through employer benefit programs. Companies (clients) will sign a deal to offer Wellthy as a benefit to its eligible employees. In order to increase revenue and retention, we want to make sure we are encouraging use of Wellthy and offering a great experience to caregivers and their families. Therefore, it is important that our care coordination team is staffed appropriately to meet demand. We aim to staff according to normal levels of activity and not surges which can be handled by offering overtime incentives or asking other Wellthy employees to help out with tasks. This helps us keep costs down while still ensuring we can complete caregiver tasks in a timely manner. 
+
 ## Scenario:
 A data analyst comes to the analytics engineers and says that the Care Team is struggling to meet capacity. One manager hypothesizes that this is due to an increase in the number of care projects and they need to hire more people. However, another manager thinks that there is an efficiency problem and certain tasks or projects are causing bottlenecks in the process. The data analyst needs to be able to analyze the data and deliver insights to the Care Team so they can make a decision on how to handle the capacity problem. 
 
@@ -26,7 +32,7 @@ Prior to your technical interview, please review the files in the `base`, `inter
 During your technical interview, we will discuss your review of the PR in a collaborative session. You will not be asked to do any coding yourself, but please be prepared to share your screen and discuss what changes, suggestions, or questions you would include in your PR review. Please note: You do not need to submit anything ahead of the interview or prepare a presentation of any kind.
 
 ## dbt Model structure
-Our dbt structure is separated across multiple databases and schemas and transformations are performed in different "layers" to reduce the repetition of logic across multiple models.
+Our dbt structure is separated across multiple databases and schemas in Snowflake and transformations are performed in different "layers" to reduce the repetition of logic across multiple models.
 * The `prep` database contains all of the early transformations that are not directly accessed by BI Tools or external processes.
     * The `base` schema contains a 1-1 relationship with the source tables and includes the individual table transformations and column aliasing. Every source table should have a corresponding `base` model.
     * The `intermediate` schema contains early combinations of records that are used as stepping stones to produce additional downstream transformations. One example of this could be combining project information from the `projects` model and the `project_history` model into the more comprehensive `full_project_history` model. This sepration will allow for leveraging the same models downstream without repeating the same joins multiple times.

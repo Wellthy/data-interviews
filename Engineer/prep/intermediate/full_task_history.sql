@@ -15,11 +15,6 @@ SELECT history.task_id
                 THEN history.modified_date
                 ELSE NULL
             END) OVER (PARTITION BY history.task_id) AS first_in_progress_date
-     , MIN(CASE WHEN history.task_status = 'IN_PROGRESS'
-                 AND history.adviser_id IS NOT NULL
-                THEN history.modified_date
-                ELSE NULL
-            END) OVER (PARTITION BY history.task_id) AS first_assigned_to_adviser_date
 	 , MAX(CASE WHEN history.task_status = 'COMPLETE' 
 	 			THEN history.modified_date
 	 			ELSE NULL

@@ -8,6 +8,7 @@ SELECT id AS project_id
      , modified AS modified_at
      , DATE(modified) AS modified_date
      , creator_id
+     , name
      , CASE WHEN _sdc_deleted_at IS NULL THEN FALSE
             ELSE TRUE
         END AS is_deleted_project

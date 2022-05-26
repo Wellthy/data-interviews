@@ -49,6 +49,10 @@ sources:
             description: The type of a project at the time of modification.
           - name: status
             description: The status of a project at the time of modification.
+            tests:
+              - accepted_values:
+                  values: ['IN_PROGRESS', 'COMPLETE', 'PAUSED']
+                  quote: false
           - name: first_active
             description: The timestamp when a project first became active.
           - name: created
@@ -81,9 +85,7 @@ sources:
           - name: project_id
             description: The project ID associated with a task.
             tests: 
-              - not_null:
-                  where: '_sdc_deleted_at is null'
-                  severity: warn
+              - not_null
               - relationships:
                   to: source ('wellthy' , 'project')
                   field: id
